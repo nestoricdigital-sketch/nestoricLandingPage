@@ -17,6 +17,7 @@ import suryacity from '../assets/icons/suryacity_logo.webp';
 import think from '../assets/icons/think.webp';
 import vasura from '../assets/icons/vasura_logo.webp';
 import vhs from '../assets/icons/vhs_logo.webp';
+import BoxShadow from './BoxShadow'
 
 export function TrustBar() {
   const elements = [
@@ -69,14 +70,25 @@ export function Stats() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: i * 0.1 }}
-            className="glass-card rounded-2xl p-6 text-center"
+            className=""
           >
-            <div className="text-2xl md:text-5xl font-bold text-white mb-2">
-              {stat.prefix}
-              {inView ? <CountUp end={stat.value} decimals={stat.decimals || 0} duration={2.5} /> : '0'}
-              {stat.suffix}
-            </div>
-            <div className="text-[#A1A1AA] font-medium">{stat.label}</div>
+            <BoxShadow
+              animated
+              className="w-full  rounded-2xl p-6 text-center"
+              borderRadius={24}
+              glowColor="270 80 80"
+              backgroundColor="#0D0D0D"
+              colors={['#7A4DBE', '#A855F7', '#38BDF8']}
+            >
+              <div className="text-2xl md:text-5xl font-bold text-white mb-2">
+                {stat.prefix}
+                {inView ? <CountUp end={stat.value} decimals={stat.decimals || 0} duration={2.5} /> : '0'}
+                {stat.suffix}
+              </div>
+              <div className="text-[#A1A1AA] font-medium">{stat.label}</div>
+
+            </BoxShadow>
+
           </motion.div>
         ))}
       </div>
@@ -97,7 +109,7 @@ export function Testimonials() {
       company: "SaaS Founder"
     },
     {
-      text: "Our ROAS doubled within the first 60 days. They don't just run ads; they fix the entire funnel.",
+      text: "Our ROAS doubled within the first 60 days. Their strategic approach and constant optimization helped improve conversions and overall campaign.",
       name: "Rahul K.",
       company: "E-Commerce Director"
     }
@@ -118,16 +130,26 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card p-8 rounded-2xl glass-card-hover"
+              className=""
             >
-              <div className="flex gap-1 mb-6 text-[#7A4DBE]">
-                {[1, 2, 3, 4, 5].map(star => <Star key={star} size={18} fill="currentColor" />)}
-              </div>
-              <p className="text-white/90 text-lg mb-8 leading-relaxed">"{t.text}"</p>
-              <div>
-                <div className="font-bold text-white">{t.name}</div>
-                <div className="text-[#A1A1AA] text-sm">{t.company}</div>
-              </div>
+              <BoxShadow
+                animated
+                className="w-full  p-8 rounded-2xl glass-card-hover "
+                borderRadius={24}
+                glowColor="270 80 80"
+                backgroundColor="#0D0D0D"
+                colors={['#7A4DBE', '#A855F7', '#38BDF8']}
+              >
+
+                <div className="flex gap-1 mb-6 text-[#7A4DBE]">
+                  {[1, 2, 3, 4, 5].map(star => <Star key={star} size={18} fill="currentColor" />)}
+                </div>
+                <p className="text-white/90 text-lg mb-8 leading-relaxed">"{t.text}"</p>
+                <div>
+                  <div className="font-bold text-white">{t.name}</div>
+                  <div className="text-[#A1A1AA] text-sm">{t.company}</div>
+                </div>
+              </BoxShadow>
             </motion.div>
           ))}
         </div>

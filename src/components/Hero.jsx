@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { Check, Sparkles } from 'lucide-react'
+import SideRays from './SideRay'
+import TextBlur from './TextBlur'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -17,6 +19,12 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-[100svh] flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none z-0">
+        <SideRays rayColor1="#7A4DBE" rayColor2="#A855F7" intensity={2} speed={1.5} origin="top-right" opacity={0.6} className="absolute inset-0 w-full h-full opacity-40 md:opacity-100" />
+        {/* <div className="hidden md:block absolute inset-0 w-full h-full">
+          <SideRays rayColor1="#38BDF8" rayColor2="#7A4DBE" intensity={1.5} speed={2} origin="bottom-right" opacity={0.4} className="absolute inset-0 w-full h-full" />
+        </div> */}
+      </div>
       {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[70%] -left-[10%] w-[40%] h-[40%] rounded-full bg-[#7A4DBE]/20 blur-[120px]" />
         <div className="absolute top-[20%] right-[0%] w-[30%] h-[30%] rounded-full bg-[#7A4DBE]/10 blur-[100px]" />
@@ -29,10 +37,20 @@ export default function Hero() {
             AI-Powered Growth Partner
           </motion.div>
 
-          <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+          <TextBlur
+            text="Stop Wasting Ad Spend."
+            className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+          />
+          <TextBlur
+            text="Start Generating Qualified Leads."
+            className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+          />
+          {/* <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
             Stop Wasting Ad Spend. <br />
             <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
-          </motion.h1>
+          </motion.h1> */}
+
+
 
           <motion.p variants={fadeInUp} className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
             We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
@@ -60,6 +78,16 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className=" order-1 lg:order-2 relative lg:justify-self-end w-full max-w-lg h-full"
         >
+          <div className='block md:hidden'>
+            <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+              Stop Wasting Ad Spend. <br />
+              <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
+            </motion.h1>
+
+            <motion.p variants={fadeInUp} className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
+              We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
+            </motion.p>
+          </div>
           <div className="glass-card  rounded-2xl md:p-8 py-8 px-2 relative z-10">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
 

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import logo from '../assets/mainNDlogo.webp';
 import whatsapp from "../assets/wApp.webp";
+import SideRays from './SideRay';
 
 
 // border-b border-white/[0.08]
@@ -12,22 +13,24 @@ export function Header() {
   return (
     <>
       <header className="fixed top-0 w-full z-50 backdrop-blur-xl ">
-        <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 md:h-20 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
+            {/* <SideRays /> */}
             {/* <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#7A4DBE] to-purple-800 flex items-center justify-center shadow-lg shadow-[#7A4DBE]/20">
               <Zap className="text-white" size={20} />
             </div> */}
-            <img src={logo} alt="logo" className='h-full w-56' />
+            <img src={logo} alt="logo" className='h-full md:w-56 w-32 object-contain' />
             {/* <span className="text-xl font-bold tracking-tight text-white">Nestoric</span> */}
           </div>
           {/* No Top Navigation Links as per requirements */}
-          <div className="flex hidden md:flex items-center gap-4">
+          <div className="flex md:flex items-center gap-4">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="h-11  md:px-6 px-2 rounded-lg bg-[#7A4DBE] text-white text-sm font-semibold hover:bg-[#6a3da8] transition-colors shadow-lg shadow-[#7A4DBE]/25">
+              className="h-8  md:px-6 px-2 rounded-lg bg-[#7A4DBE] text-white text-sm font-semibold hover:bg-[#6a3da8] transition-colors shadow-lg shadow-[#7A4DBE]/25">
               Contact us
             </button>
           </div>
+
         </div>
       </header>
       {/* Appointment Modal */}

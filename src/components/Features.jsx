@@ -1,6 +1,14 @@
 import { motion } from 'framer-motion'
-import { TrendingDown, MousePointerClick, EyeOff, HelpCircle, BarChart3, Target, Search, Code } from 'lucide-react'
-
+import {
+  TrendingDown, MousePointerClick, EyeOff, HelpCircle,
+  Search,
+  Target,
+  BarChart3,
+  Code,
+  Share2,
+  Megaphone,
+  ShieldCheck
+} from "lucide-react"; import BoxShadow from './BoxShadow'
 export function PainPoints() {
   const points = [
     { title: 'High Ad Spend', desc: 'Spending more but generating fewer leads.', icon: TrendingDown },
@@ -25,13 +33,23 @@ export function PainPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card p-6 rounded-2xl glass-card-hover border border-purple-900 "
+              className=""
             >
-              <div className="w-12 h-12 rounded-xl bg-[#7A4DBE]/10 flex items-center justify-center mb-4 text-red-400">
-                <point.icon size={24} className='text-purple-500' />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-2">{point.title}</h3>
-              <p className="text-[#A1A1AA]">{point.desc}</p>
+              <BoxShadow
+                animated
+                className="w-full  p-6 rounded-2xl glass-card-hover border border-purple-900 "
+                borderRadius={24}
+                glowColor="270 80 80"
+                backgroundColor="#0D0D0D"
+                colors={['#7A4DBE', '#A855F7', '#38BDF8']}
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#7A4DBE]/10 flex items-center justify-center mb-4 text-red-400">
+                  <point.icon size={24} className='text-purple-500' />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-2">{point.title}</h3>
+                <p className="text-[#A1A1AA]">{point.desc}</p>
+              </BoxShadow>
+
             </motion.div>
           ))}
         </div>
@@ -42,12 +60,42 @@ export function PainPoints() {
 
 export function Features() {
   const services = [
-    { title: 'Google Ads', desc: 'High-intent search campaigns that capture ready-to-buy customers.', icon: Search },
-    { title: 'Meta Ads', desc: 'Scalable social campaigns designed for direct response and ROAS.', icon: Target },
-    { title: 'SEO Strategy', desc: 'Long-term organic growth engines that compound over time.', icon: BarChart3 },
-    { title: 'Web & App Development', desc: 'High-performance  optimized for maximum conversion.', icon: Code },
-  ]
-
+    {
+      title: "Google Ads",
+      desc: "High-intent search campaigns that capture ready-to-buy customers.",
+      icon: Search,
+    },
+    {
+      title: "Meta Ads",
+      desc: "Scalable social campaigns designed for direct response and ROAS.",
+      icon: Target,
+    },
+    {
+      title: "SEO Strategy",
+      desc: "Long-term organic growth engines that compound over time.",
+      icon: BarChart3,
+    },
+    {
+      title: "Web & App Development",
+      desc: "High-performance websites and applications optimized for maximum conversion.",
+      icon: Code,
+    },
+    {
+      title: "Social Media Management",
+      desc: "Engaging content, community management, and consistent brand growth across platforms.",
+      icon: Share2,
+    },
+    {
+      title: "Performance Marketing",
+      desc: "Data-driven campaigns focused on leads, conversions, and measurable ROI.",
+      icon: Megaphone,
+    },
+    {
+      title: "Online Reputation Management",
+      desc: "Build trust and strengthen your brand with proactive review and reputation management.",
+      icon: ShieldCheck,
+    },
+  ];
   return (
     <section className="py-32 bg-[#050505]">
       <div className="max-w-7xl mx-auto px-6">
@@ -55,7 +103,8 @@ export function Features() {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Full-Funnel Growth Services</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 md:gap-6 gap-3">
+        <div className="grid md:grid-cols-3 md:gap-6 gap-3">
+
           {services.map((service, i) => (
             <motion.div
               key={i}
@@ -63,15 +112,25 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card p-4 md:p-8 rounded-3xl glass-card-hover flex items-start gap-6"
+              className=" "
             >
-              <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#7A4DBE]/10 flex items-center justify-center text-[#7A4DBE]">
-                <service.icon size={28} />
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-[#A1A1AA] leading-relaxed text-lg">{service.desc}</p>
-              </div>
+              <BoxShadow
+                animated
+                className="w-full p-4 md:p-8 rounded-3xl glass-card-hover flex items-start gap-6"
+                borderRadius={24}
+                glowColor="270 80 80"
+                backgroundColor="#0D0D0D"
+                colors={['#7A4DBE', '#A855F7', '#38BDF8']}
+              >
+                <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#7A4DBE]/10 flex items-center justify-center text-[#7A4DBE]">
+                  <service.icon size={28} />
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-[#A1A1AA] leading-relaxed text-lg">{service.desc}</p>
+                </div>
+              </BoxShadow>
+
             </motion.div>
           ))}
         </div>
@@ -115,11 +174,22 @@ export function Process() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="relative bg-[#050505] p-6 rounded-2xl border border-white/[0.08] z-10 glass-card-hover"
+                className=""
               >
-                <div className="text-5xl font-black text-white/5 mb-4">{step.num}</div>
-                <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
-                <p className="text-[#A1A1AA]">{step.desc}</p>
+                <BoxShadow
+                  animated
+                  className="w-full relative bg-[#050505] p-6 rounded-2xl border border-white/[0.08] z-10 glass-card-hover"
+                  borderRadius={24}
+                  glowColor="270 80 80"
+                  backgroundColor="#0D0D0D"
+                  colors={['#7A4DBE', '#A855F7', '#38BDF8']}
+                >
+                  <div className="text-5xl font-black text-white/5 mb-4">{step.num}</div>
+                  <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                  <p className="text-[#A1A1AA]">{step.desc}</p>
+
+                </BoxShadow>
+
               </motion.div>
             ))}
           </div>
