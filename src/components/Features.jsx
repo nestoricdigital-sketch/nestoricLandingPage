@@ -55,7 +55,7 @@ export function Features() {
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Full-Funnel Growth Services</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 md:gap-6 gap-3">
           {services.map((service, i) => (
             <motion.div
               key={i}
@@ -63,7 +63,7 @@ export function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="glass-card p-8 rounded-3xl glass-card-hover flex items-start gap-6"
+              className="glass-card p-4 md:p-8 rounded-3xl glass-card-hover flex items-start gap-6"
             >
               <div className="w-14 h-14 shrink-0 rounded-2xl bg-[#7A4DBE]/10 flex items-center justify-center text-[#7A4DBE]">
                 <service.icon size={28} />

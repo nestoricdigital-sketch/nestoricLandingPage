@@ -22,14 +22,14 @@ export default function Hero() {
         <div className="absolute top-[20%] right-[0%] w-[30%] h-[30%] rounded-full bg-[#7A4DBE]/10 blur-[100px]" />
       </div> */}
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <motion.div initial="initial" animate="animate" variants={{ animate: { transition: { staggerChildren: 0.1 } } }}>
-          <motion.div variants={fadeInUp} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
+      <div className="relative z-10 max-w-7xl mx-auto w-full md:px-6 grid lg:grid-cols-2 gap-16 items-center">
+        <motion.div initial="initial" animate="animate" variants={{ animate: { transition: { staggerChildren: 0.1 } } }} className='order-2 lg:order-1'>
+          <motion.div variants={fadeInUp} className="  inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
             <Sparkles className="text-[#7A4DBE]" size={16} />
             AI-Powered Growth Partner
           </motion.div>
 
-          <motion.h1 variants={fadeInUp} className="text-5xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+          <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
             Stop Wasting Ad Spend. <br />
             <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
           </motion.h1>
@@ -58,10 +58,10 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="relative lg:justify-self-end w-full max-w-lg h-full"
+          className=" order-1 lg:order-2 relative lg:justify-self-end w-full max-w-lg h-full"
         >
-          <div className="glass-card  rounded-2xl p-8 relative z-10">
-            <h3 className="text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
+          <div className="glass-card  rounded-2xl md:p-8 py-8 px-2 relative z-10">
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
 
 
             {isSubmitSuccessful ? (

@@ -11,30 +11,30 @@ export function CaseStudies() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass-card rounded-3xl p-8 md:p-12"
+          className="glass-card rounded-3xl md:p-8 p-4 md:p-12"
         >
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-block px-3 py-1 rounded-full bg-white/10 text-white text-sm font-medium mb-6">
                 Real Estate Sector
               </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">Scaling premium leads while cutting CPL by 40%.</h3>
+              <h3 className="text-2xl md:text-4xl font-bold text-white mb-6">Scaling premium leads while cutting CPL by 40%.</h3>
 
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
-                  <div className="text-3xl font-bold text-[#7A4DBE] mb-1">+312%</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#7A4DBE] mb-1">+312%</div>
                   <div className="text-[#A1A1AA]">Lead Volume</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#7A4DBE] mb-1">4.6x</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#7A4DBE] mb-1">4.6x</div>
                   <div className="text-[#A1A1AA]">ROAS</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#7A4DBE] mb-1">-40%</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#7A4DBE] mb-1">-40%</div>
                   <div className="text-[#A1A1AA]">Cost Per Lead</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-[#7A4DBE] mb-1">90 Days</div>
+                  <div className="text-2xl md:text-3xl font-bold text-[#7A4DBE] mb-1">90 Days</div>
                   <div className="text-[#A1A1AA]">Timeline</div>
                 </div>
               </div>

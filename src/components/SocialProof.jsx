@@ -71,7 +71,7 @@ export function Stats() {
             transition={{ delay: i * 0.1 }}
             className="glass-card rounded-2xl p-6 text-center"
           >
-            <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+            <div className="text-2xl md:text-5xl font-bold text-white mb-2">
               {stat.prefix}
               {inView ? <CountUp end={stat.value} decimals={stat.decimals || 0} duration={2.5} /> : '0'}
               {stat.suffix}
