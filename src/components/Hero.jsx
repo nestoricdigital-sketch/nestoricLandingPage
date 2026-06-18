@@ -39,11 +39,11 @@ export default function Hero() {
 
           <TextBlur
             text="Stop Wasting Ad Spend."
-            className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            className="hidden md:block text-2xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
           />
           <TextBlur
             text="Start Generating Qualified Leads."
-            className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            className="hidden md:block text-2xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
           />
           {/* <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
             Stop Wasting Ad Spend. <br />
@@ -52,7 +52,7 @@ export default function Hero() {
 
 
 
-          <motion.p variants={fadeInUp} className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
+          <motion.p variants={fadeInUp} className="hidden md:block text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
             We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
           </motion.p>
 
@@ -79,14 +79,25 @@ export default function Hero() {
           className=" order-1 lg:order-2 relative lg:justify-self-end w-full max-w-lg h-full"
         >
           <div className='block md:hidden'>
-            <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+            <TextBlur
+              text="Stop Wasting Ad Spend."
+              className="text-3xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            />
+            <TextBlur
+              text="Start Generating Qualified Leads."
+              className="text-3xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            />
+            {/* <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
               Stop Wasting Ad Spend. <br />
-              <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
-            </motion.h1>
 
-            <motion.p variants={fadeInUp} className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
-              We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
-            </motion.p>
+              <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
+            </motion.h1> */}
+
+            <TextBlur className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl"
+              text=' We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
+'/>
+            {/* <motion.p variants={fadeInUp} >
+            </motion.p> */}
           </div>
           <div className="glass-card  rounded-2xl md:p-8 py-8 px-2 relative z-10">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
