@@ -39,7 +39,7 @@ export default function Hero() {
 
           <TextBlur
             text="Stop Wasting Ad Spend."
-            className="hidden md:block text-2xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            className="hidden md:block text-2xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]"
           />
           <TextBlur
             text="Start Generating Qualified Leads."
@@ -81,7 +81,7 @@ export default function Hero() {
           <div className='block md:hidden'>
             <TextBlur
               text="Stop Wasting Ad Spend."
-              className="text-3xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+              className="text-3xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
             />
             <TextBlur
               text="Start Generating Qualified Leads."
