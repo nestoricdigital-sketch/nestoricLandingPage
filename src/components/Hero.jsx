@@ -18,33 +18,35 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative min-h-[100svh] flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden">
+    <section className="relative min-h-[100svh] flex items-center justify-center pt-32 pb-12 px-6 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none z-0">
         <SideRays rayColor1="#7A4DBE" rayColor2="#A855F7" intensity={2} speed={1.5} origin="top-right" opacity={0.6} className="absolute inset-0 w-full h-full opacity-40 md:opacity-100" />
         {/* <div className="hidden md:block absolute inset-0 w-full h-full">
           <SideRays rayColor1="#38BDF8" rayColor2="#7A4DBE" intensity={1.5} speed={2} origin="bottom-right" opacity={0.4} className="absolute inset-0 w-full h-full" />
         </div> */}
+
       </div>
       {/* <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-[70%] -left-[10%] w-[40%] h-[40%] rounded-full bg-[#7A4DBE]/20 blur-[120px]" />
         <div className="absolute top-[20%] right-[0%] w-[30%] h-[30%] rounded-full bg-[#7A4DBE]/10 blur-[100px]" />
       </div> */}
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full md:px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full md:px-6 grid lg:grid-cols-2 gap-4 md:gap-6 items-center">
         <motion.div initial="initial" animate="animate" variants={{ animate: { transition: { staggerChildren: 0.1 } } }} className='order-2 lg:order-1'>
-          <motion.div variants={fadeInUp} className="  inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
+          <motion.div variants={fadeInUp} className=" hidden lg:inline-flex  items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
             <Sparkles className="text-[#7A4DBE]" size={16} />
-            AI-Powered Growth Partner
+            Ready to Turn Your Business Into a Timeless Brand?2
           </motion.div>
 
           <TextBlur
-            text="Stop Wasting Ad Spend."
-            className="hidden md:block text-2xl lg:text-5xl font-bold tracking-tight text-white leading-[1.1]"
+            text="Nestoric Digital is your end-to-end branding and growth partner, helping ambitious businesses build memorable brands, create exceptional digital experiences, and achieve sustainable growth."
+            className="hidden md:block text-xl lg:text-3xl font-bold tracking-tight text-white leading-[1.1]"
           />
-          <TextBlur
+
+          {/* <TextBlur
             text="Start Generating Qualified Leads."
             className="hidden md:block text-2xl lg:text-5xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
-          />
+          /> */}
           {/* <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
             Stop Wasting Ad Spend. <br />
             <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
@@ -52,24 +54,40 @@ export default function Hero() {
 
 
 
-          <motion.p variants={fadeInUp} className="hidden md:block text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
+          {/* <motion.p variants={fadeInUp} className="hidden md:block text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl">
             We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
-          </motion.p>
+          </motion.p> */}
 
-          <motion.div variants={fadeInUp} className="space-y-4 mb-10 ">
-            {['Free Growth Audit', 'No Long-Term Contracts', 'Dedicated Strategy Team'].map((benefit, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-[#7A4DBE]/20 flex items-center justify-center">
+          <motion.div
+            variants={fadeInUp}
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 md:mt-4 mt-2"
+          >
+            {[
+              'Branding & Identity Design',
+              'Website Design & Development',
+              'Google Ads & Meta Ads',
+              'SEO & Social Media Management',
+              'Content, Creatives & AI-Powered Growth',
+            ].map((benefit, i) => (
+              <div key={i} className="flex items-start gap-3">
+                <div className="w-6 h-6 shrink-0 rounded-full bg-[#7A4DBE]/20 flex items-center justify-center mt-0.5">
                   <Check size={14} className="text-[#7A4DBE]" />
                 </div>
-                <span className="text-white font-medium">{benefit}</span>
+
+                <span className="text-white font-medium leading-relaxed">
+                  {benefit}
+                </span>
               </div>
             ))}
           </motion.div>
 
           <motion.button variants={fadeInUp} className="h-14 px-8 rounded-lg bg-[#7A4DBE] text-white font-semibold text-lg hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25">
-            Get Free Strategy Session
+            Let's Build Your Brand
           </motion.button>
+
+          {/* <motion.button variants={fadeInUp} className="h-14 px-8 rounded-lg bg-[#7A4DBE] text-white font-semibold text-lg hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25">
+          Start Your Growth Journey
+          </motion.button> */}
         </motion.div>
 
         <motion.div
@@ -78,27 +96,11 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className=" order-1 lg:order-2 relative lg:justify-self-end w-full max-w-lg h-full"
         >
-          <div className='block md:hidden'>
-            <TextBlur
-              text="Stop Wasting Ad Spend."
-              className="text-3xl lg:text-7xl font-bold tracking-tight text-white leading-[1.1]"
-            />
-            <TextBlur
-              text="Start Generating Qualified Leads."
-              className="text-3xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
-            />
-            {/* <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
-              Stop Wasting Ad Spend. <br />
+          <motion.div variants={fadeInUp} className=" block md:hidden  inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
+            <Sparkles className="text-[#7A4DBE]" size={16} />
+            Ready to Turn Your Business Into a Timeless Brand?
+          </motion.div>
 
-              <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
-            </motion.h1> */}
-
-            <TextBlur className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl"
-              text=' We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
-'/>
-            {/* <motion.p variants={fadeInUp} >
-            </motion.p> */}
-          </div>
           <div className="glass-card  rounded-2xl md:p-8 py-8 px-2 relative z-10">
             <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
 
@@ -150,6 +152,34 @@ export default function Hero() {
                 </button>
               </form>
             )}
+
+
+          </div>
+          <div className='block md:hidden mt-4'>
+            <TextBlur
+              text="Nestoric Digital is your end-to-end branding and growth partner, helping ambitious businesses build memorable brands, create exceptional digital experiences, and achieve sustainable growth."
+              className="text-2xl lg:text-3xl font-bold tracking-tight text-white leading-[1.1]"
+            />
+
+            {/* <TextBlur
+              text=" Ready to Turn Your Business Into a Timeless Brand?."
+              className="text-xl lg:text-7xl font-bold tracking-tight text-white leading-[1.5]"
+            /> */}
+            {/* <TextBlur
+              text="Start Generating Qualified Leads."
+              className="text-3xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
+            /> */}
+            {/* <motion.h1 variants={fadeInUp} className="text-2xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1]">
+              Stop Wasting Ad Spend. <br />
+
+              <span className="text-[#A1A1AA]">Start Generating Qualified Leads.</span>
+            </motion.h1> */}
+            {/* 
+            <TextBlur className="text-lg text-[#A1A1AA] mb-10 leading-relaxed max-w-xl"
+              text=' We help businesses scale through Google Ads, Meta Ads, SEO and Conversion-Focused Websites.
+'/> */}
+            {/* <motion.p variants={fadeInUp} >
+            </motion.p> */}
           </div>
         </motion.div>
       </div>

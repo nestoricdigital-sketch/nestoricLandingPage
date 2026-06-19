@@ -5,6 +5,8 @@ import { TrustBar, Stats, Testimonials } from './components/SocialProof'
 import { CaseStudies, Comparison } from './components/CaseStudies'
 import { FAQ } from './components/FAQ'
 import { CTA } from './components/CTA'
+import WhyNestoric from './components/WhyNestoric'
+import Challenge from './components/Challenge'
 import './index.css'
 
 function App() {
@@ -15,11 +17,13 @@ function App() {
       <Hero />
       <TrustBar />
       <Stats />
-      <PainPoints />
+      {/* <PainPoints /> */}
+      <Challenge />
       <Features />
       <Process />
+      <WhyNestoric />
       <CaseStudies />
-      <Comparison />
+      {/* <Comparison /> */}
       <Testimonials />
       <FAQ />
       <CTA />

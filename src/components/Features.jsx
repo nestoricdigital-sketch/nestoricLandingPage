@@ -61,33 +61,29 @@ export function PainPoints() {
 export function Features() {
   const services = [
     {
-      title: "Google Ads",
-      desc: "High-intent search campaigns that capture ready-to-buy customers.",
+      title: "Branding & Identity",
+      desc: "Build a memorable brand with logo design, brand strategy, visual identity, and communication systems. ",
       icon: Search,
     },
+
     {
-      title: "Meta Ads",
-      desc: "Scalable social campaigns designed for direct response and ROAS.",
-      icon: Target,
-    },
-    {
-      title: "SEO Strategy",
-      desc: "Long-term organic growth engines that compound over time.",
+      title: "SEO & Organic Growth",
+      desc: "Improve visibility and attract customers through sustainable search engine optimization.",
       icon: BarChart3,
     },
     {
-      title: "Web & App Development",
-      desc: "High-performance websites and applications optimized for maximum conversion.",
+      title: "Website Design & Development",
+      desc: "Create premium, high-converting websites that elevate your brand and drive business growth.",
       icon: Code,
     },
     {
       title: "Social Media Management",
-      desc: "Engaging content, community management, and consistent brand growth across platforms.",
+      desc: "Build trust and engagement with consistent content and creative storytelling.",
       icon: Share2,
     },
     {
       title: "Performance Marketing",
-      desc: "Data-driven campaigns focused on leads, conversions, and measurable ROI.",
+      desc: "Improve visibility and attract customers through sustainable search engine optimization.",
       icon: Megaphone,
     },
     {
@@ -95,12 +91,18 @@ export function Features() {
       desc: "Build trust and strengthen your brand with proactive review and reputation management.",
       icon: ShieldCheck,
     },
+    {
+      title: "Creative Content Production",
+      desc: "Posters, Reels, Videos, Motion Graphics, Photography, Drone Shoots, and AI-powered content creation.",
+      icon: Target,
+    },
   ];
+
   return (
     <section className="py-32 bg-[#050505]">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Full-Funnel Growth Services</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">End-to-End Solutions For Timeless Growth</h2>
         </div>
 
         <div className="grid md:grid-cols-3 md:gap-6 gap-3">
@@ -150,23 +152,28 @@ export function Features() {
 
 export function Process() {
   const steps = [
-    { num: '01', title: 'Audit', desc: 'Deep dive into your current metrics and funnels.' },
-    { num: '02', title: 'Strategy', desc: 'Custom roadmap focused on quick wins and long-term scale.' },
-    { num: '03', title: 'Launch', desc: 'Executing the campaigns with high-converting creatives.' },
-    { num: '04', title: 'Scale', desc: 'Continuous optimization using AI and split testing.' },
+    { num: '01', title: 'Discover', desc: 'Understanding your business, audience, and vision.' },
+    { num: '02', title: 'Strategize', desc: 'Creating a roadmap for branding, marketing, and growth.' },
+    { num: '03', title: 'Build', desc: 'Executing websites, creatives, campaigns, and digital assets.' },
+    { num: '04', title: 'Launch', desc: 'Executing campaigns and deploying assets with precision and speed.' },
+    { num: '05', title: 'Optimize', desc: 'Continuously improving campaigns and user experiences.' },
+    { num: '06', title: 'Scale', desc: 'Helping your business grow sustainably and profitably.' },
+
+
   ]
   // bg-[#0D0D0D]
   return (
     <section className="py-32 ">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-white">Our Proven Methodology</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-white">Our Process</h2>
+          {/* <p>How We Build Brands </p> */}
         </div>
 
         <div className="relative">
           <div className="hidden md:block absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#7A4DBE]/50 to-transparent -translate-y-1/2" />
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {steps.map((step, i) => (
               <motion.div
                 key={i}
@@ -178,7 +185,7 @@ export function Process() {
               >
                 <BoxShadow
                   animated
-                  className="w-full relative bg-[#050505] p-6 rounded-2xl border border-white/[0.08] z-10 glass-card-hover"
+                  className="w-full relative bg-[#050505] md:p-4 p-2 rounded-2xl border border-white/[0.08] z-10 glass-card-hover"
                   borderRadius={24}
                   glowColor="270 80 80"
                   backgroundColor="#0D0D0D"

@@ -32,7 +32,7 @@ export function CTA() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <button className="h-16 px-10 rounded-xl bg-[#7A4DBE] text-white font-bold text-xl hover:bg-[#6a3da8] hover:scale-105 transition-all shadow-2xl shadow-[#7A4DBE]/30">
+          <button className="h-16 px-4 md:px-10 rounded-xl bg-[#7A4DBE] text-white font-bold text-xl hover:bg-[#6a3da8] hover:scale-105 transition-all shadow-2xl shadow-[#7A4DBE]/30">
             Get Free Growth Audit
           </button>
         </motion.div>
