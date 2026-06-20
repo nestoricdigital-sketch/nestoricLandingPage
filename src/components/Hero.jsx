@@ -72,7 +72,7 @@ export default function Hero() {
           </motion.div>
 
           <TextBlur
-            text="Nestoric Digital is your end-to-end branding and growth partner, helping ambitious businesses build memorable brands, create exceptional digital experiences, and achieve sustainable growth."
+            text="Make your brand impossible to ignore."
             className="hidden md:block text-xl lg:text-3xl font-bold tracking-tight text-white leading-[1.1]"
           />
 
@@ -212,7 +212,7 @@ export default function Hero() {
           </div>
           <div className='block md:hidden mt-4'>
             <TextBlur
-              text="Nestoric Digital is your end-to-end branding and growth partner, helping ambitious businesses build memorable brands, create exceptional digital experiences, and achieve sustainable growth."
+              text="Make your brand impossible to ignore."
               className="text-2xl lg:text-3xl font-bold tracking-tight text-white leading-[1.1]"
             />
 
