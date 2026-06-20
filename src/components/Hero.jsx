@@ -68,7 +68,7 @@ export default function Hero() {
         <motion.div initial="initial" animate="animate" variants={{ animate: { transition: { staggerChildren: 0.1 } } }} className='order-2 lg:order-1'>
           <motion.div variants={fadeInUp} className=" hidden lg:inline-flex  items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
             <Sparkles className="text-[#7A4DBE]" size={16} />
-            Ready to Turn Your Business Into a Timeless Brand?2
+            Ready to Turn Your Business Into a Timeless Brand?
           </motion.div>
 
           <TextBlur
