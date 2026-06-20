@@ -6,7 +6,7 @@ export function CTA() {
       {/* Background gradient blob  bg-[#050505] relative overflow-hidden border-t border-white/[0.08]*/}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[400px] bg-[#7A4DBE]/30 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+      <div className="max-w-4xl mx-auto px-6 relative  text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,9 +32,11 @@ export function CTA() {
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
         >
-          <button className="h-16 px-4 md:px-10 rounded-xl bg-[#7A4DBE] text-white font-bold text-xl hover:bg-[#6a3da8] hover:scale-105 transition-all shadow-2xl shadow-[#7A4DBE]/30">
-            Get Free Growth Audit
-          </button>
+          <a href='https://www.nestoricdigital.com/contact' target='_blank'>
+            <button className="h-16 px-4 md:px-10 cursor-pointer rounded-xl bg-[#7A4DBE] text-white font-bold text-xl hover:bg-[#6a3da8] hover:scale-105 transition-all shadow-2xl shadow-[#7A4DBE]/30">
+              Get Free Growth Audit
+            </button>
+          </a>
         </motion.div>
       </div>
     </section>

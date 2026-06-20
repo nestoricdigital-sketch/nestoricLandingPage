@@ -16,7 +16,7 @@ export default function Challenge() {
       {/* Background gradients */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#7A4DBE]/5 blur-[120px] rounded-full pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto md:px-6 px-4 relative z-10">
+      <div className="max-w-7xl mx-auto md:px-6 px-4 relative">
 
         <div className="text-center mb-16 max-w-3xl mx-auto">
           {/* <motion.div
@@ -80,7 +80,7 @@ export default function Challenge() {
             className="relative h-full"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-[#7A4DBE]/20 to-purple-900/20 blur-xl rounded-3xl" />
-            <div className="glass-card h-full p-4 md:p-8 md:p-12 rounded-3xl border border-[#7A4DBE]/30 bg-[#7A4DBE]/10 backdrop-blur-md relative z-10 flex flex-col justify-center">
+            <div className="glass-card h-full p-4 md:p-8 md:p-12 rounded-3xl border border-[#7A4DBE]/30 bg-[#7A4DBE]/10 backdrop-blur-md relative flex flex-col justify-center">
               <div className="w-16 h-16 rounded-2xl bg-[#7A4DBE] flex items-center justify-center mb-10 shadow-lg shadow-[#7A4DBE]/25 shrink-0">
                 <ArrowRight size={32} className="text-white" />
               </div>

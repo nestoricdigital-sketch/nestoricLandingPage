@@ -185,7 +185,7 @@ export function Process() {
               >
                 <BoxShadow
                   animated
-                  className="w-full relative bg-[#050505] md:p-4 p-2 rounded-2xl border border-white/[0.08] z-10 glass-card-hover"
+                  className="w-full relative bg-[#050505] md:p-4 p-2 rounded-2xl border border-white/[0.08] glass-card-hover"
                   borderRadius={24}
                   glowColor="270 80 80"
                   backgroundColor="#0D0D0D"

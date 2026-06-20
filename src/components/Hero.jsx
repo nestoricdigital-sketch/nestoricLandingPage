@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { Check, Sparkles } from 'lucide-react'
+import { Check, Sparkles, Loader2 } from 'lucide-react'
 import SideRays from './SideRay'
 import TextBlur from './TextBlur'
+import { supabase } from '../lib/supabase'
+import AppointmentModal from './AppointmentModal'
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -11,10 +14,40 @@ const fadeInUp = {
 }
 
 export default function Hero() {
-  const { register, handleSubmit, formState: { isSubmitSuccessful } } = useForm()
+  const { register, handleSubmit, reset } = useForm()
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
+  const [submitError, setSubmitError] = useState('')
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const onSubmit = (data) => {
-    console.log(data)
+
+  const onSubmit = async (data) => {
+    setIsSubmitting(true)
+    setSubmitError('')
+    try {
+      const { error } = await supabase
+        .from('nestoricleads')
+        .insert([
+          {
+            name: data.name,
+            phone: data.phone,
+            email: data.email,
+            business_name: data.businessName,
+            service: data.service,
+            budget: data.budget,
+          }
+        ])
+
+      if (error) throw error
+
+      setIsSuccess(true)
+      reset()
+    } catch (error) {
+      console.error('Error saving to Supabase:', error)
+      setSubmitError('Something went wrong. Please try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -60,7 +93,7 @@ export default function Hero() {
 
           <motion.div
             variants={fadeInUp}
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 md:mt-4 mt-2"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 md:mt-8 mt-2"
           >
             {[
               'Branding & Identity Design',
@@ -80,10 +113,14 @@ export default function Hero() {
               </div>
             ))}
           </motion.div>
-
-          <motion.button variants={fadeInUp} className="h-14 px-8 rounded-lg bg-[#7A4DBE] text-white font-semibold text-lg hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25">
+          {/* <a href='https://www.nestoricdigital.com/contact' target='_blank'> */}
+          <motion.button variants={fadeInUp} className="text-center h-14 px-8 cursor-pointer rounded-lg bg-[#7A4DBE] text-white font-semibold text-lg hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25"
+            onClick={() => setIsModalOpen(true)}>
             Let's Build Your Brand
           </motion.button>
+          {/* </a> */}
+          <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+
 
           {/* <motion.button variants={fadeInUp} className="h-14 px-8 rounded-lg bg-[#7A4DBE] text-white font-semibold text-lg hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25">
           Start Your Growth Journey
@@ -105,7 +142,7 @@ export default function Hero() {
             <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
 
 
-            {isSubmitSuccessful ? (
+            {isSuccess ? (
               <div className="py-12 text-center">
                 <div className="w-16 h-16 rounded-full bg-[#7A4DBE]/20 flex items-center justify-center mx-auto mb-4">
                   <Check size={32} className="text-[#7A4DBE]" />
@@ -119,7 +156,24 @@ export default function Hero() {
                   <input {...register("name", { required: true })} placeholder="Name" className="w-full h-12 px-4 rounded-lg bg-[#0D0D0D] border border-white/[0.08] text-white placeholder:text-[#A1A1AA] focus:outline-none focus:border-[#7A4DBE] transition-colors" />
                 </div>
                 <div>
-                  <input {...register("phone", { required: true })} placeholder="Phone" className="w-full h-12 px-4 rounded-lg bg-[#0D0D0D] border border-white/[0.08] text-white placeholder:text-[#A1A1AA] focus:outline-none focus:border-[#7A4DBE] transition-colors" />
+                  <input
+                    type="tel"
+                    inputMode="numeric"
+                    maxLength={10}
+                    placeholder="Phone"
+                    {...register("phone", {
+                      required: "Phone number is required",
+                      pattern: {
+                        value: /^[0-9]{10}$/,
+                        message: "Enter a valid 10-digit phone number",
+                      },
+                    })}
+                    onInput={(e) => {
+                      e.target.value = e.target.value.replace(/\D/g, "");
+                    }}
+                    className="w-full h-12 px-4 rounded-lg bg-[#0D0D0D] border border-white/[0.08] text-white placeholder:text-[#A1A1AA] focus:outline-none focus:border-[#7A4DBE] transition-colors"
+                  />
+                  {/* <input {...register("phone", { required: true })} placeholder="Phone" maxLength={10} className="w-full h-12 px-4 rounded-lg bg-[#0D0D0D] border border-white/[0.08] text-white placeholder:text-[#A1A1AA] focus:outline-none focus:border-[#7A4DBE] transition-colors" /> */}
                 </div>
                 <div>
                   <input {...register("email", { required: true })} type="email" placeholder="Email" className="w-full h-12 px-4 rounded-lg bg-[#0D0D0D] border border-white/[0.08] text-white placeholder:text-[#A1A1AA] focus:outline-none focus:border-[#7A4DBE] transition-colors" />
@@ -141,15 +195,16 @@ export default function Hero() {
                 <div>
                   <select {...register("budget", { required: true })} defaultValue="" className="w-full h-12 px-4 rounded-lg bg-[#0D0D0D] border border-white/[0.08] text-[#A1A1AA] focus:outline-none focus:border-[#7A4DBE] transition-colors">
                     <option value="" disabled>Monthly Marketing Budget</option>
-                    <option value="under-1k">Under $1,000</option>
-                    <option value="1k-5k">$1,000 - $5,000</option>
-                    <option value="5k-10k">$5,000 - $10,000</option>
-                    <option value="10k+">$10,000+</option>
+                    <option value="under-10k">Under 10k</option>
+                    <option value="10k-50k">10k - 50k</option>
+                    <option value="50k-100k">50k - 100k</option>
+                    <option value="100k+">100k+</option>
                   </select>
                 </div>
-                <button type="submit" className="w-full h-12 mt-4 rounded-lg bg-[#7A4DBE] text-white font-bold hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25">
-                  Get Free Growth Audit
+                <button type="submit" disabled={isSubmitting} className="w-full h-12 mt-4 flex items-center justify-center rounded-lg bg-[#7A4DBE] text-white font-bold hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25 disabled:opacity-70 disabled:hover:scale-100 disabled:cursor-not-allowed">
+                  {isSubmitting ? <Loader2 className="animate-spin" size={24} /> : 'Get Free Growth Audit'}
                 </button>
+                {submitError && <p className="text-red-400 text-sm text-center mt-2">{submitError}</p>}
               </form>
             )}
 

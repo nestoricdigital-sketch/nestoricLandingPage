@@ -18,7 +18,7 @@ export default function WhyNestoric() {
       {/* Background gradients */}
       {/* <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#7A4DBE]/10 blur-[120px] rounded-full pointer-events-none" /> */}
 
-      <div className="max-w-7xl mx-auto md:px-6 px-3 relative z-10">
+      <div className="max-w-7xl mx-auto md:px-6 px-3 relative ">
         <div className="text-center mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
