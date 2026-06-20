@@ -64,7 +64,7 @@ export default function Hero() {
         <div className="absolute top-[20%] right-[0%] w-[30%] h-[30%] rounded-full bg-[#7A4DBE]/10 blur-[100px]" />
       </div> */}
 
-      <div className="relative z-10 max-w-7xl mx-auto w-full md:px-6 grid lg:grid-cols-2 gap-4 md:gap-6 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full md:px-6 grid lg:grid-cols-[60%_40%] gap-4 md:gap-4 items-center">
         <motion.div initial="initial" animate="animate" variants={{ animate: { transition: { staggerChildren: 0.1 } } }} className='order-2 lg:order-1'>
           <motion.div variants={fadeInUp} className=" hidden lg:inline-flex  items-center gap-2 px-3 py-1.5 rounded-full border border-white/[0.08] bg-white/[0.03] backdrop-blur-md text-sm font-medium text-white mb-8">
             <Sparkles className="text-[#7A4DBE]" size={16} />
@@ -73,7 +73,7 @@ export default function Hero() {
 
           <TextBlur
             text="Make your brand impossible to ignore."
-            className="hidden md:block text-xl lg:text-3xl font-bold tracking-tight text-white leading-[1.1]"
+            className="hidden md:block text-xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]"
           />
 
           {/* <TextBlur
@@ -114,9 +114,21 @@ export default function Hero() {
             ))}
           </motion.div>
           {/* <a href='https://www.nestoricdigital.com/contact' target='_blank'> */}
-          <motion.button variants={fadeInUp} className="text-center h-14 px-8 cursor-pointer rounded-lg bg-[#7A4DBE] text-white font-semibold text-lg hover:bg-[#6a3da8] hover:scale-[1.02] transition-all shadow-lg shadow-[#7A4DBE]/25"
-            onClick={() => setIsModalOpen(true)}>
-            Let's Build Your Brand
+          <motion.button
+            variants={fadeInUp}
+            onClick={() => setIsModalOpen(true)}
+            className="group relative inline-flex h-14 cursor-pointer items-center justify-center overflow-hidden rounded-xl p-[1px]"
+          >
+            <div
+              className="absolute inset-[-1000%] animate-spin"
+              style={{ animationDuration: "3s" }}
+            >
+              <div className="h-full w-full bg-[conic-gradient(from_90deg_at_50%_50%,#7A4DBE,#A855F7,#C084FC,#7A4DBE)]" />
+            </div>
+
+            <span className="relative flex h-full items-center justify-center rounded-[13px] bg-[#0D0D0D] px-8 text-lg font-semibold text-[#7A4DBE] transition-colors group-hover:bg-[#151515] hover:text-white">
+              Let's Build Your Brand
+            </span>
           </motion.button>
           {/* </a> */}
           <AppointmentModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -139,7 +151,7 @@ export default function Hero() {
           </motion.div>
 
           <div className="glass-card  rounded-2xl md:p-8 py-8 px-2 relative z-10">
-            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">Get Your Growth Audit</h3>
+            <h3 className="text-xl font-bold text-white mb-6">Get Your Growth Audit</h3>
 
 
             {isSuccess ? (
